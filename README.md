@@ -31,7 +31,7 @@ php artisan serve
 
 ## To include component template to the component use following code:
 ```ts
-'template': require('./first.template.html'),
+'template': require('./app.component.html'),
 ```
 
 
