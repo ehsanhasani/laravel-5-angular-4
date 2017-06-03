@@ -1,4 +1,5 @@
 let mix = require('laravel-mix');
+let helpers = require('./helpers');
 
 /*
  |--------------------------------------------------------------------------
@@ -11,5 +12,22 @@ let mix = require('laravel-mix');
  |
  */
 
-// mix.js('resources/assets/js/app.js', 'public/js')
-//    .sass('resources/assets/sass/app.scss', 'public/css');
+mix.webpackConfig({
+    resolve: {
+        extensions: ['.ts']
+    },
+    module: {
+        rules: [
+            {
+                test: /\.ts$/,
+                loader: 'ts-loader'
+            }
+        ]
+    }
+});
+
+mix.js([
+    'resources/assets/ts/polyfills.ts',
+    'resources/assets/ts/vendor.ts',
+    'resources/assets/ts/main.ts'
+], 'public/js/app.js');
