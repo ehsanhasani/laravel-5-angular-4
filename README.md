@@ -37,5 +37,5 @@ php artisan serve
 
 ## To include component style to the component use following code:
 ```ts
-'styles': [`${require('./app.component.css')}`]
+'styles': [`${require('./app.component.scss')}`]
 ```
